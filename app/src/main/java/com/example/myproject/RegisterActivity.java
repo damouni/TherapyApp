@@ -19,6 +19,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText pass;
     //Second User Password
     EditText pass2;
+    // register button
     Button register;
     DatabaseHelper databaseHelper;
 
