@@ -11,7 +11,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
+    //User Email
     EditText email;
+    //User Phone
     EditText phone;
     EditText pass;
     EditText pass2;
