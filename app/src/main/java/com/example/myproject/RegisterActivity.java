@@ -15,7 +15,9 @@ public class RegisterActivity extends AppCompatActivity {
     EditText email;
     //User Phone
     EditText phone;
+    //First User Password
     EditText pass;
+    //Second User Password
     EditText pass2;
     Button register;
     DatabaseHelper databaseHelper;
