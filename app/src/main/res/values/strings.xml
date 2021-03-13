@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MYPROJECT</string>
+    <string name="app_welcome_txt">اهلا وسهلا بك في تطبيقك للعلاج</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="register">انشاء حساب جديد</string>
     getString(R.string.preference_file_key)
 </resources>

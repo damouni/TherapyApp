@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SigninActivity extends AppCompatActivity {
+public class SignInActivity extends AppCompatActivity {
 EditText email1;
 EditText passw;
     DatabaseHelper databaseHelper;
@@ -18,7 +18,7 @@ EditText passw;
         setContentView(R.layout.activity_signin);
         email1=findViewById(R.id.editTextSIGNinEmailAddress);
         passw=findViewById(R.id.editTextTextPassword);
-        databaseHelper=new DatabaseHelper(SigninActivity.this);
+        databaseHelper=new DatabaseHelper(SignInActivity.this);
     }
 
     public void nextActivity(View view) {

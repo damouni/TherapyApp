@@ -83,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
         if (!pss2.isEmpty() && !a.isEmpty() && !pss.isEmpty() && !text.isEmpty()) {
             if (databaseHelper.addText(pss2)) {
                 pass2.setText("");}
-            Intent intent = new Intent(this, SigninActivity.class);
+            Intent intent = new Intent(this, SignInActivity.class);
             if (flag == true) {
                         Toast.makeText(this, "تم التسجيل  بنجاح", Toast.LENGTH_SHORT).show();
                         startActivity(intent);}
