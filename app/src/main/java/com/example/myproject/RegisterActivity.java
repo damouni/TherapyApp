@@ -52,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     boolean isValidPassword(EditText text1, EditText text2){
          String str1 = text1.getText().toString();
-        String str2 = text1.getText().toString();
+        String str2 = text2.getText().toString();
         return str1.equals(str2);
     }
 
