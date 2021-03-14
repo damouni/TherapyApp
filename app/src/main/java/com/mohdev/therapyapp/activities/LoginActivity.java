@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.myproject.R;
+import com.mohdev.therapyapp.activities.R;
+import com.mohdev.therapyapp.helper.DatabaseHelper;
 
 public class LoginActivity extends AppCompatActivity {
     EditText username;

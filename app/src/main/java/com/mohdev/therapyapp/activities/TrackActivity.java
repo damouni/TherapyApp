@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.myproject.R;
+import com.mohdev.therapyapp.activities.R;
 
 public class TrackActivity extends AppCompatActivity {
 

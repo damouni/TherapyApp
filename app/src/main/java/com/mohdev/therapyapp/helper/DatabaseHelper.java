@@ -1,4 +1,4 @@
-package com.mohdev.therapyapp.activities;
+package com.mohdev.therapyapp.helper;
 
 import android.content.ContentValues;
 import android.content.Context;
