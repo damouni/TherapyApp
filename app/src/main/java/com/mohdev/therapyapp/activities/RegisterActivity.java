@@ -1,4 +1,4 @@
-package com.example.myproject;
+package com.mohdev.therapyapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.myproject.R;
+import com.mohdev.therapyapp.activities.DatabaseHelper;
 
 public class RegisterActivity extends AppCompatActivity {
     //User Email
