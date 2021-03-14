@@ -21,7 +21,10 @@ public class RegisterActivity extends AppCompatActivity {
     EditText pass2;
     // register button
     Button register;
+    User currentUser;
     DatabaseHelper databaseHelper;
+    private String Name, Phone, Password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,61 +38,35 @@ public class RegisterActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(RegisterActivity.this);
     }
 
+    private boolean chkFields() {
+        Name = email.getText().toString();
+        Phone = phone.getText().toString();
+        Password = pass.getText().toString();
+        if (Name.isEmpty()) {
+            email.setError("Please enter your name");
+            email.requestFocus();
+        } else if (Phone.isEmpty()) {
+            phone.setError("Please enter your phone number !");
+            phone.requestFocus();
+        } else if (Password.isEmpty()) {
+            pass.setError("Please enter password !");
+            pass.requestFocus();
+        } else if (Name.isEmpty() && Phone.isEmpty() && Password.isEmpty()) {
+            Toast.makeText(this, "Fields are empty ! fill in please", Toast.LENGTH_SHORT).show();
+        } else if (!(Name.isEmpty() && Phone.isEmpty() && Password.isEmpty()))
+            return true;
 
-    public void ff(View view) {
-        boolean flag = true;
-        String pss = pass.getText().toString();
-        String text = email.getText().toString();
-        String a = phone.getText().toString();
-        String pss2 = pass2.getText().toString();
-        if (text.isEmpty()) {
-            Toast.makeText(this, "اكتب البريد الاكتروني", Toast.LENGTH_SHORT).show();
-            flag = false;
-        }
-        if (!pss2.isEmpty() && !a.isEmpty() && !pss.isEmpty() && !text.isEmpty()) {
-            if (databaseHelper.addText(text)) {
-                email.setText("");
-                flag = true;
-            }
-        }
-
-        if (a.isEmpty()) {
-            Toast.makeText(this, "رجاءا اكتب رقم هاتفك النقال", Toast.LENGTH_SHORT).show();
-            flag = false;
-        }
-        if (!pss2.isEmpty() && !a.isEmpty() && !pss.isEmpty() && !text.isEmpty()) {
-            if (databaseHelper.addText(a)) {
-                phone.setText("");
-                flag = true;
-
-            }
-        }
-
-        if (pss.isEmpty()) {
-            Toast.makeText(this, "اكتب كلمة المرور من فضلك", Toast.LENGTH_SHORT).show();
-            flag = false;
-        }
-        if (!pss2.isEmpty() && !a.isEmpty() && !pss.isEmpty() && !text.isEmpty()) {
-            if (databaseHelper.addText(pss)) {
-                pass.setText("");
-                flag = true;
-            }
-        }
-
-        if (pss2.isEmpty()) {
-            Toast.makeText(this, "اكتب كلمة المرور مرة اخرى بشكل صحيح", Toast.LENGTH_SHORT).show();
-            flag = false;
-        }
-        if (!pss2.isEmpty() && !a.isEmpty() && !pss.isEmpty() && !text.isEmpty()) {
-            if (databaseHelper.addText(pss2)) {
-                pass2.setText("");}
-            Intent intent = new Intent(this, SigninActivity.class);
-            if (flag == true) {
-                        Toast.makeText(this, "تم التسجيل  بنجاح", Toast.LENGTH_SHORT).show();
-                        startActivity(intent);}
-            }
-            if (flag == false) {
-                Toast.makeText(this, "أكمل الناقص بشكل صحيح من فضلك", Toast.LENGTH_SHORT).show();
-            }
-        }
+        return false;
     }
+    public void ff(View view) {
+        if (chkFields()) {
+            currentUser = new User();
+            currentUser.setName(Name);
+            currentUser.setPassWord(Password);
+            currentUser.setPhone(Phone);
+            currentUser = databaseHelper.insert(currentUser);
+            Toast.makeText(this, "SignUp succeded..", Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(this,SigninActivity.class);
+            startActivity(intent);
+        }
+    }}

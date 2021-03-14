@@ -66,24 +66,6 @@
         android:textStyle="bold"
         />
 
-    <EditText
-        android:id="@+id/edtpassword2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint=" كلمة المرور مرة اخرى"
-        android:inputType="textPassword"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.664"
-        tools:textColorHint="@color/black"
-        android:textStyle="bold"
-        />
-
     <Button
         android:id="@+id/Signupbtn"
         android:layout_width="214dp"
