@@ -16,6 +16,7 @@ EditText passw;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
+        //signin adress
         email1=findViewById(R.id.editTextSIGNinEmailAddress);
         passw=findViewById(R.id.editTextTextPassword);
         databaseHelper=new DatabaseHelper(SigninActivity.this);
