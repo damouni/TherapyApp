@@ -22,6 +22,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // ?
     private static final String COLUMN_ID = "_id";
     private static final String COLUMN_NAME = "name";
+    private static final String COLUMN_EMAIL = "email";
     private static final String COLUMN_PHONE = "phone";
     private static final String COLUMN_PASSWORD = "password";
     private static final String COLUMN_IMAGE = "imgProfile";
@@ -130,6 +131,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // if using the rawQuery
         String query = "SELECT * FROM " + TABLE_RECORD + " WHERE " + COLUMN_NAME + " = ?";
         String column = COLUMN_NAME;
+        return select(column,vals);
+    }
+    public ArrayList<User> genericSelectByEmail(String email)
+    {
+        String[] vals = { email };
+        // if using the rawQuery
+        String query = "SELECT * FROM " + TABLE_RECORD + " WHERE " + COLUMN_EMAIL + " = ?";
+        String column = COLUMN_EMAIL;
         return select(column,vals);
     }
 

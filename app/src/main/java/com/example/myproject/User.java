@@ -14,10 +14,10 @@ public class User {
     }
 
     public User(String name, String phone, String passWord) {
-        this.id=0;
+        this.id = 0;
         this.name = name;
         this.phone = phone;
-        this.passWord=passWord;
+        this.passWord = passWord;
 
     }
 
