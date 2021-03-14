@@ -5,24 +5,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-EditText email1;
-EditText passw;
+    EditText username;
+    EditText password;
+    Button register;
+    Button login;
     DatabaseHelper databaseHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signin);
-        email1=findViewById(R.id.editTextSIGNinEmailAddress);
-        passw=findViewById(R.id.editTextTextPassword);
-        databaseHelper=new DatabaseHelper(SignInActivity.this);
+        setContentView(R.layout.activity_login);
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+        //databaseHelper=new DatabaseHelper(LoginActivity.this);
     }
-
+/**
     public void nextActivity(View view) {
-Intent intent=new Intent(this,TrackActivity.class);
+        Intent intent=new Intent(this,TrackActivity.class);
         boolean flag=true;
         String text=email1.getText().toString();
         String pss=passw.getText().toString();
@@ -47,11 +50,11 @@ Intent intent=new Intent(this,TrackActivity.class);
                 flag=true;
             }
         }
-    if(flag==true){
-        Toast.makeText(this, "تم تسجيل الدخول بنجاح", Toast.LENGTH_SHORT).show();
-        startActivity(intent);
+        if(flag==true){
+            Toast.makeText(this, "تم تسجيل الدخول بنجاح", Toast.LENGTH_SHORT).show();
+            startActivity(intent);
 
-    }
-    }
+        }
+    }**/
 
 }

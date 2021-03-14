@@ -36,11 +36,11 @@
         app:srcCompat="@drawable/message" />
 
     <Button
-        android:id="@+id/SignIn"
+        android:id="@+id/btnGetSignIn"
         android:layout_width="279dp"
         android:layout_height="48dp"
         android:gravity="center"
-        android:onClick="getSignInForm"
+        android:onClick="login"
         android:text="@string/sign_in"
         android:textColor="@color/black"
         android:textSize="23sp"
@@ -53,11 +53,11 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnGetRegister"
         android:layout_width="279dp"
         android:layout_height="48dp"
         android:gravity="center"
-        android:onClick="getRegistrationForm"
+        android:onClick="register"
         android:text="@string/register"
         android:textColor="@color/black"
         android:textSize="23sp"

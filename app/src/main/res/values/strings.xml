@@ -3,5 +3,12 @@
     <string name="app_welcome_txt">اهلا وسهلا بك في تطبيقك للعلاج</string>
     <string name="sign_in">تسجيل الدخول</string>
     <string name="register">انشاء حساب جديد</string>
+    <string name="email">البريد الاكتروني</string>
+    <string name="phone_number">رقم الهاتف النقال</string>
+    <string name="first_password">كلمة المرور</string>
+    <string name="second_password">كلمة المرور مرة اخرى</string>
+    <string name="sign_up">الذهاب الى تسجيل الدخول</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="password">كلمة المرور</string>
     getString(R.string.preference_file_key)
 </resources>

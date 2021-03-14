@@ -39,7 +39,7 @@ return true;
 
     }
 
-    public boolean getpass(String pass) {
+    public boolean getPass(String pass) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("txt", pass);

@@ -1,11 +1,9 @@
 package com.example.myproject;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,7 +17,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText pass;
     //Second User Password
     EditText pass2;
-    // register button
+    //register button
     Button register;
     DatabaseHelper databaseHelper;
 
@@ -27,69 +25,68 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
         email = findViewById(R.id.edtEmail);
         phone = findViewById(R.id.editTextPhone);
         pass = findViewById(R.id.edtpassword);
         pass2 = findViewById(R.id.edtpassword2);
         register = findViewById(R.id.Signupbtn);
-        databaseHelper = new DatabaseHelper(RegisterActivity.this);
+        register.setOnClickListener(v -> checkDataEntered());
+        //databaseHelper = new DatabaseHelper(RegisterActivity.this);
     }
 
+    boolean isPhone(EditText text){
+        CharSequence phone = text.getText().toString();
+        return(!TextUtils.isEmpty(phone) && Patterns.PHONE.matcher(phone).matches());
+    }
 
-    public void ff(View view) {
-        boolean flag = true;
-        String pss = pass.getText().toString();
-        String text = email.getText().toString();
-        String a = phone.getText().toString();
-        String pss2 = pass2.getText().toString();
-        if (text.isEmpty()) {
-            Toast.makeText(this, "اكتب البريد الاكتروني", Toast.LENGTH_SHORT).show();
-            flag = false;
-        }
-        if (!pss2.isEmpty() && !a.isEmpty() && !pss.isEmpty() && !text.isEmpty()) {
-            if (databaseHelper.addText(text)) {
-                email.setText("");
-                flag = true;
-            }
-        }
+    boolean isEmail(EditText text){
+        CharSequence email = text.getText().toString();
+        return(!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
+    }
 
-        if (a.isEmpty()) {
-            Toast.makeText(this, "رجاءا اكتب رقم هاتفك النقال", Toast.LENGTH_SHORT).show();
-            flag = false;
-        }
-        if (!pss2.isEmpty() && !a.isEmpty() && !pss.isEmpty() && !text.isEmpty()) {
-            if (databaseHelper.addText(a)) {
-                phone.setText("");
-                flag = true;
+    boolean isEmpty(EditText text){
+        CharSequence str = text.getText().toString();
+        return TextUtils.isEmpty(str);
+    }
 
-            }
-        }
+    boolean isValidPassword(EditText text1, EditText text2){
+         String str1 = text1.getText().toString();
+        String str2 = text1.getText().toString();
+        return str1.equals(str2);
+    }
 
-        if (pss.isEmpty()) {
-            Toast.makeText(this, "اكتب كلمة المرور من فضلك", Toast.LENGTH_SHORT).show();
-            flag = false;
+    void checkDataEntered(){
+        if(isPhone(phone) == false){
+            phone.setError("Enter valid Phone number!");
+
         }
-        if (!pss2.isEmpty() && !a.isEmpty() && !pss.isEmpty() && !text.isEmpty()) {
-            if (databaseHelper.addText(pss)) {
-                pass.setText("");
-                flag = true;
-            }
+        if (isEmpty(phone)){
+            Toast t = Toast.makeText(this, "رجاءا اكتب رقم هاتفك النقال", Toast.LENGTH_SHORT);
+            t.show();
         }
 
-        if (pss2.isEmpty()) {
-            Toast.makeText(this, "اكتب كلمة المرور مرة اخرى بشكل صحيح", Toast.LENGTH_SHORT).show();
-            flag = false;
+        if(isEmpty(pass)){
+            Toast t = Toast.makeText(this, "اكتب كلمة المرور من فضلك", Toast.LENGTH_SHORT);
+            t.show();
         }
-        if (!pss2.isEmpty() && !a.isEmpty() && !pss.isEmpty() && !text.isEmpty()) {
-            if (databaseHelper.addText(pss2)) {
-                pass2.setText("");}
-            Intent intent = new Intent(this, SignInActivity.class);
-            if (flag == true) {
-                        Toast.makeText(this, "تم التسجيل  بنجاح", Toast.LENGTH_SHORT).show();
-                        startActivity(intent);}
-            }
-            if (flag == false) {
-                Toast.makeText(this, "أكمل الناقص بشكل صحيح من فضلك", Toast.LENGTH_SHORT).show();
-            }
+
+        if (isEmpty(pass2)) {
+            Toast t = Toast.makeText(this, "اكتب كلمة المرور مرة اخرى بشكل صحيح", Toast.LENGTH_SHORT);
+            t.show();
+        }
+
+        if(isValidPassword(pass,pass2) == false){
+            pass2.setError("Error Password not match, please try again ...");
+        }
+
+
+        if(isEmpty(email)){
+            Toast t = Toast.makeText(this, "اكتب البريد الاكتروني", Toast.LENGTH_SHORT);
+            t.show();
+        }
+        if (isEmail(email) == false) {
+            email.setError("Enter valid email!");
         }
     }
+}
