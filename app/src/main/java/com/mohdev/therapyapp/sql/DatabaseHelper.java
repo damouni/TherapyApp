@@ -1,4 +1,4 @@
-package com.mohdev.therapyapp.helper;
+package com.mohdev.therapyapp.sql;
 
 import android.content.ContentValues;
 import android.content.Context;

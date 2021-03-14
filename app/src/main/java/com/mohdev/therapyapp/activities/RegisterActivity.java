@@ -8,8 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.mohdev.therapyapp.activities.R;
-import com.mohdev.therapyapp.helper.DatabaseHelper;
+import com.mohdev.therapyapp.sql.DatabaseHelper;
 
 public class RegisterActivity extends AppCompatActivity {
     //User Email
