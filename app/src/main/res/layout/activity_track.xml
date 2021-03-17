@@ -21,8 +21,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="338dp"
-        android:layout_height="163dp"
+        android:layout_width="279dp"
+        android:layout_height="159dp"
         android:gravity="center"
         android:text="اضغط على اشارة الزائد لاضافة تتبع جديد للدواء  "
         android:textColor="#0213A5"
