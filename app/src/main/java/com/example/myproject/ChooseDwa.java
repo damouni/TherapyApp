@@ -24,18 +24,18 @@ public class ChooseDwa extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String message = "لقد حان وقت اخذ الدواء اضغط هنا لتأكيد تلقيك للدواء ";
-                NotificationCompat.Builder builder=new NotificationCompat.Builder(ChooseDwa.this)
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(ChooseDwa.this)
                         .setSmallIcon(R.drawable.healthcare)
                         .setContentTitle("لا تنسى انه وقت اخذ الدواء")
                         .setContentText(message)
                         .setAutoCancel(true);
-                Intent intent =new Intent(ChooseDwa.this, Notification.class);
-intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-intent.putExtra("message",message);
-                PendingIntent pendingIntent=  PendingIntent.getActivity(ChooseDwa.this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+                Intent intent = new Intent(ChooseDwa.this, NotificationActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("message", message);
+                PendingIntent pendingIntent = PendingIntent.getActivity(ChooseDwa.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 builder.setContentIntent(pendingIntent);
-                NotificationManager notificationManager=(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-                notificationManager.notify(0,builder.build());
+                NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                notificationManager.notify(0, builder.build());
             }
         });
     }
