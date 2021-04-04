@@ -15,7 +15,7 @@ public class TrackActivity extends AppCompatActivity {
     }
 
     public void AddTrackToDwa(View view)  {
-Intent intent=new  Intent(TrackActivity.this,ChooseDwa.class);
+        Intent intent = new  Intent(this,ChooseDwa.class);
         startActivity(intent);
     }
 }

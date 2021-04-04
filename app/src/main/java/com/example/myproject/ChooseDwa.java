@@ -22,7 +22,7 @@ public class ChooseDwa extends AppCompatActivity implements TimePickerDialog.OnT
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_choose_dwa);
         mTextView = findViewById(R.id.textView);
         Button buttonTimePicker = findViewById(R.id.button_timepicker);
         Button buttonCancelAlarm = findViewById(R.id.button_cancel);
