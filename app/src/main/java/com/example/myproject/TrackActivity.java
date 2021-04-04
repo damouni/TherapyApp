@@ -1,10 +1,10 @@
 package com.example.myproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class TrackActivity extends AppCompatActivity {
 
@@ -15,7 +15,7 @@ public class TrackActivity extends AppCompatActivity {
     }
 
     public void AddTrackToDwa(View view)  {
-Intent intent=new  Intent(this,ChooseDwa.class);
+Intent intent=new  Intent(TrackActivity.this,ChooseDwa.class);
         startActivity(intent);
     }
 }

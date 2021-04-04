@@ -1,62 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ChooseDwa">
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="205dp"
-        android:layout_height="44dp"
-        android:hint=" اسم الدواء"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="15sp"
-android:gravity="right"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235" />
-
-    <Button
-        android:id="@+id/btn_notifacation"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="notifacation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.428" />
-
-    <EditText
-        android:layout_width="205dp"
-        android:layout_height="44dp"
-        android:gravity="right"
-
-        android:hint="كم حبة دواء تريد تلقي باليوم الواحد"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        android:textSize="15sp"
-
-        app:layout_constraintVertical_bias="0.04" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="205dp"
-        android:layout_height="44dp"
-        android:gravity="right"
-        android:hint="على كم حبة تحتوي علبة الدواء"
-
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.569" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_above="@id/button_timepicker"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="No Alarm set"
+        android:textSize="30sp" />
+    <Button
+        android:onClick="Picktime"
+        android:id="@+id/button_timepicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="open time picker" />
+    <Button
+        android:onClick="CancelAlarm"
+        android:id="@+id/button_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_timepicker"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="cancel alarm" />
+</RelativeLayout>
